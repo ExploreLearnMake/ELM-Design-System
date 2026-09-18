@@ -15,7 +15,7 @@ Theme: forest-and-metal in light mode (grounded, natural — the elm tree and it
 ### Light
 
 | Token | Name | Hex | Usage |
-| ----- | ---- | --- | ----- |
+| --- | --- | --- | --- |
 | `background` | Cream | `#F5EEE0` | Page background |
 | `text` | Ink | `#211C16` | Body text |
 | `primary` | Forest | `#34503A` | Primary brand color — headings, primary UI elements |
@@ -27,7 +27,7 @@ Theme: forest-and-metal in light mode (grounded, natural — the elm tree and it
 ### Dark
 
 | Token | Name | Hex | Usage |
-| ----- | ---- | --- | ----- |
+| --- | --- | --- | --- |
 | `background` | Midnight Violet | `#13111C` | Page background |
 | `text` | Off-white | `#EDEFEC` | Body text |
 | `primary` | Coral | `#FF8C75` | Primary brand color — "alien bioluminescent foliage." Headings, primary UI elements. |
@@ -41,7 +41,7 @@ Theme: forest-and-metal in light mode (grounded, natural — the elm tree and it
 ### Functional (Success / Warning / Error)
 
 | Token | Mode | Hex | Contrast vs background | Notes |
-| ----- | ---- | --- | ----------------------- | ----- |
+| --- | --- | --- | --- | --- |
 | `success` | Light | `#34503A` (= `primary`/Forest) | 7.7:1 | Reused rather than adding a 3rd green — no dedicated green cleared 4.5:1 while staying visually distinct from Forest/Leaf Dark. Doubles nicely as "growth." |
 | `warning` | Light | `#8A4200` (Rust) | 6.4:1 | New color, kept clearly separated from Copper |
 | `error` | Light | `#B3261E` | 5.7:1 | New color, red was unclaimed in this mode |
@@ -49,7 +49,7 @@ Theme: forest-and-metal in light mode (grounded, natural — the elm tree and it
 | `warning` | Dark | `#F7C948` | 11.9:1 | Pushed clearly away from Coral |
 | `error` | Dark | `#FF3B3B` | 5.3:1 | Threaded between Coral and Magenta — the tightest fit of the six |
 
-**Hard rule, not a suggestion:** WCAG 1.4.1 prohibits color as the *only* way to convey information. Every success/warning/error state must ship with an icon (✓ / ⚠ / ✕ or equivalent) and a text label at all times — never a color change alone (not just a fallback for bad cases; applies uniformly to every state in both modes). This isn't optional styling — a colorblind visitor literally cannot tell light mode's Success and Error apart by color alone; simulation showed the two collapsing to nearly the same tone under both protanopia and deuteranopia. Dark mode's pair separates better under simulation, but the icon+label rule still applies there — consistency matters more than relying on a pair that "happens to" work.
+**Hard rule, not a suggestion:** WCAG 1.4.1 prohibits color as the _only_ way to convey information. Every success/warning/error state must ship with an icon (✓ / ⚠ / ✕ or equivalent) and a text label at all times — never a color change alone (not just a fallback for bad cases; applies uniformly to every state in both modes). This isn't optional styling — a colorblind visitor literally cannot tell light mode's Success and Error apart by color alone; simulation showed the two collapsing to nearly the same tone under both protanopia and deuteranopia. Dark mode's pair separates better under simulation, but the icon+label rule still applies there — consistency matters more than relying on a pair that "happens to" work.
 
 Implementation note: alert/banner backgrounds should use a light tint of the functional color (roughly 10–15% opacity over the surface) with the full-strength color reserved for the icon, border, and heading text — avoids ever needing light text on a saturated fill.
 
@@ -62,6 +62,7 @@ Two families: **Atkinson Hyperlegible Next** for everything readable, **Fira Cod
 **Atkinson Hyperlegible Next** — variable font (weight axis confirmed 200–800 on Google Fonts), designed by the Braille Institute specifically for legibility — distinct shapes for easily-confused characters (`1`/`l`/`I`, `0`/`O`), which fits the accessibility bar the rest of this doc is held to. `Fira Code` is a monospace font for programmers with optional ligatures for sequences like `->` and `<=`, weights 300–700 via Google Fonts.
 
 Google Fonts embed (self-contained if self-hosted later, but this is the simple path to start):
+
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,13 +70,13 @@ Google Fonts embed (self-contained if self-hosted later, but this is the simple 
 ```
 
 | Role | Font Family | Weight | Size | Notes |
-| ---- | ----------- | ------ | ---- | ----- |
-| Heading 1 | Atkinson Hyperlegible Next | 700 (suggested) |  |  |
-| Heading 2 | Atkinson Hyperlegible Next | 700 (suggested) |  |  |
-| Heading 3 | Atkinson Hyperlegible Next | 600 (suggested) |  |  |
-| Body | Atkinson Hyperlegible Next | 400 |  |  |
-| Small / Label | Atkinson Hyperlegible Next | 500 (suggested — a touch heavier helps small text stay legible) |  |  |
-| Code | Fira Code | 400 |  | Code blocks, inline `code`, anything technical |
+| --- | --- | --- | --- | --- |
+| Heading 1 | Atkinson Hyperlegible Next | 700 (suggested) | | |
+| Heading 2 | Atkinson Hyperlegible Next | 700 (suggested) | | |
+| Heading 3 | Atkinson Hyperlegible Next | 600 (suggested) | | |
+| Body | Atkinson Hyperlegible Next | 400 | | |
+| Small / Label | Atkinson Hyperlegible Next | 500 (suggested — a touch heavier helps small text stay legible) | | |
+| Code | Fira Code | 400 | | Code blocks, inline `code`, anything technical |
 
 ---
 
@@ -84,7 +85,7 @@ Google Fonts embed (self-contained if self-hosted later, but this is the simple 
 _Reference for what's already in `Assets/Branding/` and when to use each — this part's already decided, just documenting it._
 
 | Version | Files | Use when |
-| ------- | ----- | -------- |
+| --- | --- | --- |
 | Full mark, black (with text) | `ELM-logo-black.svg`, `ELM-logo-black-1500.png` | On light backgrounds, anywhere there's room for the full wordmark — headers, footers, print |
 | Full mark, white (with text) | `ELM-logo-white.svg`, `ELM-logo-white-1500.png` | On dark backgrounds |
 | Icon only, black | `ELM-logo-black-notext.svg`, `-16/32/180-notext.png` | Small placements where the wordmark won't be legible — favicon, small nav mark, app icon |
@@ -104,12 +105,12 @@ _Reference for what's already in `Assets/Branding/` and when to use each — thi
 _Only fill this in if you want a consistent spacing system across projects — e.g. a set of margin/padding values everything pulls from instead of arbitrary pixel values per project._
 
 | Token | Value | Typical use |
-| ----- | ----- | ----------- |
-| xs |  |  |
-| sm |  |  |
-| md |  |  |
-| lg |  |  |
-| xl |  |  |
+| --- | --- | --- |
+| xs | | |
+| sm | | |
+| md | | |
+| lg | | |
+| xl | | |
 
 ---
 
